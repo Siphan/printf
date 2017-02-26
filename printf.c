@@ -1,25 +1,16 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include "holberton.h"
 
-int _printf(const char *format, ...);
-
-int main(void)
-{
-  char c = 'a';
-  int ret = printf("Test %c\n", c);
-  int ret2 = _printf("Test %c\n", c);
-
-  printf("%d\n", ret);
-  printf("%d\n", ret2);
-
-  return (0);
-}
-
+/**
+ * _printf prints to standard output one char at a time
+ * For now it only handles the 'c' format specifier
+ */
 int _printf(const char *format, ...)
 {
   int len;
-  int count;
-  int i;
+  int count = 0;
+  int i = 0;
   va_list args; /* va_list type is a "pointer" */
 
   va_start(args, format);
@@ -32,7 +23,7 @@ int _printf(const char *format, ...)
     else
     {
       len++;
-      count++;
+      count ++;
       switch (format[len])
       {
         case 'c':
