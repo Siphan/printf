@@ -1,17 +1,16 @@
 #include <stdio.h>
+#include <limits.h>
 #include "holberton.h"
 
-/**
- * main is a temporary test program to test our WIP _printf.
- */
 int main(void)
 {
-  char c = 'a';
-  int ret = printf("Test %c\n", c);
-  int ret2 = _printf("Test %c\n", c);
+        int len, len2;
 
-  printf("%d\n", ret);
-  printf("%d\n", ret2);
+        len = _printf("Let's try to printf a simple sentence.\n");
+        len2 = printf("Let's try to printf a simple sentence.\n");
 
-  return (0);
+        printf("My printf length:[%d]\n", len);
+        printf("Original printf length:[%d]\n", len2);
+
+        return (0);
 }
