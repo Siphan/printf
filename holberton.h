@@ -1,3 +1,5 @@
+#ifndef HOLBERTON
+#define HOLBERTON
 #include <stdarg.h>
 /*  * _printf - print to standard output one char at a time */
 int _printf(const char *format, ...);
@@ -6,7 +8,7 @@ int _printf(const char *format, ...);
 int conversion(va_list args, char specifier);
 
 /* ccase - handle the character conversion specifier */
-int ccase(va_list args);
+int c_case(va_list args);
 
 /* putchr - print a char to stdout */
 int putchr(char c);
@@ -16,3 +18,5 @@ int s_case(va_list args);
 
 /* putstr - print a string to stdout */
 int putstr(char *str);
+
+#endif /* HOLBERTON */

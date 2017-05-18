@@ -3,16 +3,16 @@
 
 /**
  * s_case - handle the string conversion specifier
- * @args: the arguments passed to _printf
+ * @args: pointer to list of variable length arguments
  *
- * Return: the number of characters printed
+ * Return: bytes writen to stdout (the number of characters printed)
  */
 int s_case(va_list args)
 {
-	int bytecount;
+	/* int bytecount; */
 	char *str;
 
-	bytecount = 0;
+	/*bytecount = 0;*/
 	str = va_arg(args, char *);
 
 	if (!str)

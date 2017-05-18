@@ -2,12 +2,12 @@
 #include "holberton.h"
 
 /**
- * ccase - handle the character conversion specifier
- * @args: the arguments passed to _printf
+ * c_case - handle the character conversion specifier
+ * @args: pointer to list of variable length arguments
  *
  * Return: the number of characters printed
  */
-int ccase(va_list args)
+int c_case(va_list args)
 {
 	int i;
 

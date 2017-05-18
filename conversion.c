@@ -17,7 +17,7 @@ int conversion(va_list args, char specifier)
 	switch (specifier)
 	{
 		case 'c':
-			bytecount = ccase(args);
+			bytecount = c_case(args);
 			break;
 
 		case 's':
