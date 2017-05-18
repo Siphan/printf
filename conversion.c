@@ -10,20 +10,29 @@
  */
 int conversion(va_list args, char specifier)
 {
-	int bytecount;
+  int bytecount;
 
-	bytecount = 0;
+  bytecount = 0;
 
-	switch (specifier)
-	{
-		case 'c':
-			bytecount = c_case(args);
-			break;
+  switch (specifier)
+    {
+    case 'c':
+      bytecount = c_case(args);
+      break;
+      
+    case 's':
+      bytecount = s_case(args);
+      break;
+      
+    case '%':
+      putchr('%');
+      break;
+      
+    default:
+      putchr('%');
+      bytecount++;
+      putchr(specifier);
+    }
 
-		case 's':
-			bytecount = s_case(args);
-			break;
-	}
-
-	return (bytecount);
+  return (bytecount);
 }
