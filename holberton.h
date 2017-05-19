@@ -19,4 +19,13 @@ int s_case(va_list args);
 /* putstr - print a string to stdout */
 int putstr(char *str);
 
+/* d_case - handle integer conversion specifier */
+int d_case(va_list args);
+
+/* i_case - handle integer conversion specifier */
+int i_case(va_list args);
+
+/* putint - function that prints numbers to stdout. */
+int putint(int n);
+
 #endif /* HOLBERTON */

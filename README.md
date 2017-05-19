@@ -28,6 +28,18 @@ void c_case(va_list args);
 int s_case(va_list args, int dircnt);
 ```
 
+[d_case](../master/d_case.c)
+```c
+/* d_case - handle integer conversion specifiers */
+int d_case(va_list args);
+```
+
+[i_case](../master/i_case.c)
+```c
+/* i_case - handle integer conversion specifiers. */
+int i_case(va_list args);
+```
+
 [putchr](../master/putchar.c)
 ```c
 /* _putchar - function that writes characters to stdout. */
@@ -38,4 +50,10 @@ int putchr(char c);
 ```c
 /* print_str - writes a string to stdout. */
 int putstr(char *str);
+```
+
+[putint](../master/print_int.c)
+```c
+/* print_int - function that prints numbers to stdout. */
+int putint(int n);
 ```

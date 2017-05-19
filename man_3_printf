@@ -1,0 +1,75 @@
+.\" Manpage for _printf.
+.\" Contact siphan.bou@holbertonschool.com to correct errors or typos.
+.TH _printf 3 "May 17, 2017" "_printf(3)" "Version 0.1"
+.SH NAME
+.BI " _printf - formatted output conversion"
+.SH SYNOPSIS
+.BI "int _printf(const char *format, ...);"
+.SH DESCRIPTION
+The _printf() function prints to stdout based on the
+.BI format string.
+
+.B Return Value
+.RS
+Printf will return bytes written to stdout, or -1 if the format string is empty or NULL.
+.RE
+
+.B Format
+.RS
+The format string consists of characters written directly to stdout unless a % is found. In the case a % is found, the next character is evaluated to determine whether it is a conversion specifier and should access a directive function argument.
+.RE
+
+.B Conversion specifier
+.RS
+A character that determines the type of conversion to be applied. Available conversion specifiers are:
+.RE
+
+.RS
+.IP c
+If c conversion specifier is found, an int argument is converted to type char written to stdout.
+.RE
+
+.RS
+.IP s
+If s conversion specifier is found, a char * argument is then printed to stdout while bytes writen is returned.
+.RE
+
+.RS
+.IP "d, i"
+If d or i conversion specifier is found, an int argument is passed to a print int which will print the decimal to stdout and return bytes written.
+.RE
+
+.RS
+.IP %
+If an additional % is found, the first % escapes the second, and simply prints one % to stdout.
+.RE
+
+.SH EXAMPLE
+
+
+.nf
+int main(void)
+{
+	char *s = "Exple";
+	char c = 'C';
+	int d = 7;
+	int len;
+
+	len = _printf("String: %s | Character: %c | Decimal: %d\n", s, c, d);
+
+	/* This printf will print the return value of the previous printf */
+	_printf("Return on first _printf: %d\n", len);
+
+	return (0);
+}
+
+OUTPUT: String: Exple | Character: C | Decimal: 7
+	   Return on first _printf: 42
+.fi
+
+.SH BUGS
+ - -
+.SH AUTHOR
+Siphan Bou (siphan.bou@holbertonschool.com)
+.SH SEE ALSO
+.BI "PRINTF(3)"
