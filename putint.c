@@ -14,7 +14,7 @@ int putint(int n)
 	bytecnt = 0;
 	if (n < 0)
 	{
-		bytecnt += _putchar('-');
+		bytecnt += putchr('-');
 	}
 	else
 	{
@@ -29,7 +29,7 @@ int putint(int n)
 	for (ncpy = n; len != 0; len /= 10)
 	{
 		digit = (ncpy / len) * -1;
-		bytecnt += _putchar(digit + '0');
+		bytecnt += putchr(digit + '0');
 		ncpy %= len;
 	}
 

@@ -15,11 +15,11 @@ int d_case(va_list args)
 	i = va_arg(args, int);
 	if (!i)
 	{
-		bytecount = _putchar('0') - 1;
+		bytecount = putchr('0') - 1;
 	}
 	else
 	{
-		bytecount = print_int(i);
+		bytecount = putint(i);
 	}
 
 	return (bytecount);
