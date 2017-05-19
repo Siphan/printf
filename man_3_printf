@@ -1,9 +1,9 @@
-.\" Manpage for _printf.
-.\" Contact siphan.bou@holbertonschool.com to correct errors or typos.
-.TH _printf 3 "May 17, 2017" "_printf(3)" "Version 0.1"
+.TH _printf 3 "17 May 2017" "_printf(3)" "Version 0.1"
 .SH NAME
 .BI " _printf - formatted output conversion"
 .SH SYNOPSIS
+#include <holberton.h>
+.TP
 .BI "int _printf(const char *format, ...);"
 .SH DESCRIPTION
 The _printf() function prints to stdout based on the
@@ -17,7 +17,7 @@ Printf will return bytes written to stdout, or -1 if the format string is empty 
 
 .B Format
 .RS
-The format string consists of characters written directly to stdout unless a % is found. In the case a % is found, the next character is evaluated to determine whether it is a conversion specifier and should access a directive function argument.
+The format string consists of characters written directly to stdout unless a % is found. In the case when a % is found, the next character is evaluated to determine whether it is a conversion specifier and should access a directive function argument.
 .RE
 
 .B Conversion specifier
@@ -32,12 +32,12 @@ If c conversion specifier is found, an int argument is converted to type char wr
 
 .RS
 .IP s
-If s conversion specifier is found, a char * argument is then printed to stdout while bytes writen is returned.
+If s conversion specifier is found, a char * argument is then printed to stdout while bytes written is returned.
 .RE
 
 .RS
 .IP "d, i"
-If d or i conversion specifier is found, an int argument is passed to a print int which will print the decimal to stdout and return bytes written.
+If d or i conversion specifier is found, an int argument is passed to a putint() function which will print the decimal to stdout and return bytes written.
 .RE
 
 .RS
