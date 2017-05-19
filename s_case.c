@@ -4,6 +4,7 @@
 /**
  * s_case - handle the string conversion specifier
  * @args: pointer to list of variable length arguments
+ * @dircnt: tracks the number of directives called
  *
  * Return: bytes writen to stdout (the number of characters printed)
  */

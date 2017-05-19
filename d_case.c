@@ -2,7 +2,7 @@
 
 /**
  * d_case - handle integer conversion specifier.
- * @args: Pointer to list of variable length arguments.
+ * @args: pointer to list of variable length arguments.
  *
  * Return: bytes written to stdout.
  */

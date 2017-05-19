@@ -3,8 +3,9 @@
 
 /**
  * conversion - check the conversion specifiers
- * @args: the arguments passed to _printf
+ * @args: pointer to list of variable length arguments
  * @specifier: the conversion specifier
+ * @dircnt: tracks the number of directives called
  *
  * Return: the number of characters printed
  */

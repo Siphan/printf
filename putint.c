@@ -20,7 +20,7 @@ int putint(int n)
     {
       n = -n;
     }
-  
+
   for (len = 1, ncpy = n; ncpy < -9; len *= 10)
     {
       ncpy /= 10;
