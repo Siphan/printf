@@ -11,31 +11,39 @@
  */
 int _printf(const char *format, ...)
 {
-	int len;
-	int bytecount = 0;
-	/* int i = 0; */
-	va_list args; /* va_list type is a "pointer" */
+  long int len, bytecnt, dircnt;
+  va_list args;
 
-	if (!format)
+  dircnt = 0;
+  bytecnt = 0;
+  if (format)
+    {
+      va_start(args, format);
+    }
+  else
+    {
+      return (-1);
+    }
+  for (len = 0; format[len] != '\0'; len++)
+    {
+      if (format[len] != '%')
 	{
-		return (-1);
+	  putchr(format[len]);
 	}
-
-	va_start(args, format);
-
-	for (len = 0; format[len] != '\0'; len++)
+      else
 	{
-		if (format[len] != '%')
-		{
-			bytecount += putchr(format[len]);
-		}
-		else
-		{
-			len++;
-			bytecount += conversion(args, format[len]);
-		}
+	  len++;
+	  if (!format[len])
+	    {
+	      return (-1);
+	    }
+	  dircnt++;
+	  bytecnt += conversion(args, format[len], dircnt);
 	}
-	va_end(args);
-
-	return (bytecount);
+    }
+  va_end(args);
+  if (dircnt > 0)
+    len -= dircnt;
+  len += bytecnt;
+  return (len);
 }

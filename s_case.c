@@ -7,19 +7,25 @@
  *
  * Return: bytes writen to stdout (the number of characters printed)
  */
-int s_case(va_list args)
+int s_case(va_list args, int dircnt)
 {
-	/* int bytecount; */
-	char *str;
+  int bytecnt;
+  char *str;
 
-	/*bytecount = 0;*/
-	str = va_arg(args, char *);
-
-	if (!str)
+  bytecnt = 0;
+  str = va_arg(args, char *);
+  if (str == NULL)
+    {
+      bytecnt = putstr("(null)") - 1;
+    }
+  else
+    {
+      bytecnt = putstr(str);
+      if (dircnt)
 	{
-		putstr("(null)");
-		return (0);
+	  bytecnt -= 1;
 	}
+    }
 
-	return (putstr(str));
+  return (bytecnt);
 }

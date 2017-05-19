@@ -5,7 +5,7 @@
 int _printf(const char *format, ...);
 
 /* conversion - check the conversion specifiers */
-int conversion(va_list args, char specifier);
+int conversion(va_list args, char specifier, int dircnt);
 
 /* ccase - handle the character conversion specifier */
 int c_case(va_list args);
@@ -14,7 +14,7 @@ int c_case(va_list args);
 int putchr(char c);
 
 /* s_case - handle the string conversion specifier */
-int s_case(va_list args);
+int s_case(va_list args, int dircnt);
 
 /* putstr - print a string to stdout */
 int putstr(char *str);

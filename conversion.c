@@ -8,7 +8,7 @@
  *
  * Return: the number of characters printed
  */
-int conversion(va_list args, char specifier)
+int conversion(va_list args, char specifier, int dircnt)
 {
   int bytecount;
 
@@ -21,7 +21,7 @@ int conversion(va_list args, char specifier)
       break;
 
     case 's':
-      bytecount = s_case(args);
+      bytecount = s_case(args, dircnt);
       break;
 
     case 'd':
