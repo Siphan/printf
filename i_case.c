@@ -8,19 +8,19 @@
  */
 int i_case(va_list args)
 {
-	int i;
-	int bytecount;
+  int i;
+  int bytecount;
 
-	bytecount = 0;
-	i = va_arg(args, int);
-	if (!i)
-	{
-		bytecount = putchr('0') - 1;
-	}
-	else
-	{
-		bytecount = putint(i);
-	}
+  bytecount = 0;
+  i = va_arg(args, int);
+  if (!i)
+    {
+      bytecount = putchr('0') - 1;
+    }
+  else
+    {
+      bytecount = putint(i);
+    }
 
-	return (bytecount);
+  return (bytecount);
 }

@@ -24,13 +24,13 @@ int conversion(va_list args, char specifier)
       bytecount = s_case(args);
       break;
 
-		case 'd':
-			bytecount = d_case(args);
-			break;
+    case 'd':
+      bytecount = d_case(args);
+      break;
 
-		case 'i':
-			bytecount = i_case(args);
-			break;
+    case 'i':
+      bytecount = i_case(args);
+      break;
 
     case '%':
       putchr('%');

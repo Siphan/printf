@@ -9,30 +9,30 @@
  */
 int putint(int n)
 {
-	int len, ncpy, bytecnt, digit;
+  int len, ncpy, bytecnt, digit;
 
-	bytecnt = 0;
-	if (n < 0)
-	{
-		bytecnt += putchr('-');
-	}
-	else
-	{
-		n = -n;
-	}
+  bytecnt = 0;
+  if (n < 0)
+    {
+      bytecnt += putchr('-');
+    }
+  else
+    {
+      n = -n;
+    }
+  
+  for (len = 1, ncpy = n; ncpy < -9; len *= 10)
+    {
+      ncpy /= 10;
+    }
 
-	for (len = 1, ncpy = n; ncpy < -9; len *= 10)
-	{
-		ncpy /= 10;
-	}
+  for (ncpy = n; len != 0; len /= 10)
+    {
+      digit = (ncpy / len) * -1;
+      bytecnt += putchr(digit + '0');
+      ncpy %= len;
+    }
 
-	for (ncpy = n; len != 0; len /= 10)
-	{
-		digit = (ncpy / len) * -1;
-		bytecnt += putchr(digit + '0');
-		ncpy %= len;
-	}
-
-	return (bytecnt - 1);
+  return (bytecnt - 1);
 
 }
